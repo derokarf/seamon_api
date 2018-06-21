@@ -1,16 +1,20 @@
-// const db = 'gpsmon';
-// const path = require('path');
+const db = 'gpsmon';
+const path = require('path');
 
 module.exports = {
   development: {
     client: 'pg',
     debug: false,
     connection: {
-      host: 'hydro.lin.irk.ru',
-      database: 'gpsmon',
-      user: 'gpmon',
+      host: 'localhost',
+      database: `${db}_dev`,
+      user: 'gpsmon',
+      // Подумать как отказаться от хранения пароля в открытом виде в релизе
       password: 'd41d8cd98',
       charset: 'utf8'
+    },
+    migrations: {
+      directory: path.join('..', 'db', 'migrations')
     }
   },
   production: {

@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/index",
-    "dev": "SET NODE_ENV='development' && node ./bin/index",
+    "dev": "DEBUG=gpsmon:* NODE_ENV=development nodemon --inspect bin/index",
+    "migrate": "knex migrate:latest --knexfile db/knexfile.js",
     "lint": "yarn eslint ."
   },
   "dependencies": {
     "body-parser": "1.18.x",
     "bookshelf": "^0.10.4",
+    "cors": "2.8.4",
     "node-static":"^0.7.10",
     "pg": "7.3.x",
     "knex": "0.13.0",

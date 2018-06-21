@@ -1,4 +1,6 @@
+const environment = (`${process.env.NODE_ENV}`).trim() || 'development';
 const express = require('express');
+const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
@@ -6,12 +8,20 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(cors());
 // app.use(express.favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 
-const testTrack = require('./api/test_track');
+app.options("/*", cors());
 
-app.use('/api/track', testTrack);
+const boats = require('./api/boats');
+const gadgets = require('./api/gadgets');
+const races = require('./api/races');
+
+app.use('/api/boats', boats);
+app.use('/api/gadgets', gadgets);
+app.use('/api/races', races);
+
 
 module.exports = app;
