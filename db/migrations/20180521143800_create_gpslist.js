@@ -5,8 +5,8 @@ exports.up = knex =>
     table.text('type');
     table.integer('gadget').references('id').inTable('gadgets');
     table.bigInteger('ttdd');
-    table.decimal('lat',9,6);
-    table.decimal('lng',9,6);
+    table.decimal('lat',9,4);
+    table.decimal('lng',9,4);
     table.float('speed');
     table.float('course');
     table.boolean('isvalidgps');
