@@ -4,7 +4,7 @@ exports.up = knex =>
     table.increments();
     table.text('type');
     table.integer('gadget').references('id').inTable('gadgets');
-    table.integer('ttdd');
+    table.bigInteger('ttdd');
     table.decimal('lat',9,6);
     table.decimal('lng',9,6);
     table.float('speed');

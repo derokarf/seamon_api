@@ -7,7 +7,7 @@ exports.up = knex =>
     table.increments();
     table.text('type');
     table.bigInteger('imei').notNullable();
-    table.integer('ttdd');
+    table.bigInteger('ttdd');
     table.decimal('lat',9,6);
     table.decimal('lng',9,6);
     table.float('speed');
