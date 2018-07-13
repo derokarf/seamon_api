@@ -1,8 +1,7 @@
-// {id, type, IMEI, ttdd, lat, lng, speed, course, isValidGPS, timestamps}
+// {id, IMEI, ttdd, lat, lng, speed, course, isValidGPS, timestamps}
 exports.up = knex =>
   knex.schema.createTable('gpslist', table => {
     table.increments();
-    table.text('type');
     table.integer('gadget').references('id').inTable('gadgets');
     table.bigInteger('ttdd');
     table.decimal('lat',9,4);

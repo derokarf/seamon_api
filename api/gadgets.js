@@ -7,7 +7,7 @@ const router = express.Router();
 const table = 'gadgets';
 
 // Записывает новый трекер в базу.
-router.post('/add',(req, res, next) => {
+router.post('/add',(req, res) => {
   const dataGadget = req.body;
   // Запрос {id, imei, phone, name, about, type}
   pg(table).insert({
@@ -28,7 +28,7 @@ router.post('/add',(req, res, next) => {
 });
 
 // Загружает данные всех трекеров.
-router.get('/getall',(req, res, next) => {
+router.get('/getall',(req, res) => {
   // Запрос {id, imei, phone, name, about, type}
   pg.select('id', 'imei', 'phone', 'name', 'type', 'about').table(table)
   .then(result => {

@@ -5,11 +5,11 @@ exports.up = knex =>
     table.text('name');
     // С этого значения треки с устройств, привязанных к гонке начинают
     // отображаться на карте
-    table.integer('begin');
+    table.bigInteger('begin');
     // После этого времени треки не отображаются для текущей гонки
-    table.integer('end');
-    table.integer('start');
-    table.integer('finish');
+    table.bigInteger('end');
+    table.bigInteger('start');
+    table.bigInteger('finish');
     table.text('location');
     table.text('about');
     table.timestamps();

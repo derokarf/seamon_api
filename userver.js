@@ -18,10 +18,12 @@ app.options("/*", cors());
 const boats = require('./api/boats');
 const gadgets = require('./api/gadgets');
 const races = require('./api/races');
+const tracks = require('./api/tracks');
 
 app.use('/api/boats', boats);
 app.use('/api/gadgets', gadgets);
 app.use('/api/races', races);
+app.use('/api/tracks', tracks);
 
 
 module.exports = app;
