@@ -17,6 +17,7 @@ router.post('/gettrack',(req, res) => {
   pg.where('gadget', req.body.id)
   .andWhere('ttdd', '>=', req.body.start)
   .andWhere('ttdd', '<=', req.body.stop)
+  .andWhere('isvalidgps', 'true')
   .select('ttdd','lat','lng','speed','course').table(tbGPSList)
   .then(result => {
     res.set({
