@@ -9,8 +9,6 @@ module.exports = {
       host: 'localhost',
       database: `${db}_dev`,
       user: 'gpsmon',
-      // Подумать как отказаться от хранения пароля в открытом виде в релизе
-      password: 'd41d8cd98',
       charset: 'utf8'
     },
     migrations: {
